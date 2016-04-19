@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+	<head>
+  		<meta charset="UTF-8">
+  		<title>Ejemplo - directivas</title>
+      <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  		<script src="js/angular.min.js"></script>
+  		<script src="js/script.js"></script>
+	</head>
+	<body ng-app="app">
+  <div class="container">
+    <div ng-controller="empresaController as emp" class="container">
+      <div class="well">
+        <ul class="nav nav-pills nav-justified">
+          <li ng-class="{ active:emp.isSet(1) }">
+            <a ng-click="emp.setTab(1)">tab1</a>
+          </li>
+          <li ng-class="{ active:emp.isSet(2) }">
+            <a ng-click="emp.setTab(2)">tab2</a>
+          </li>
+          <li ng-class="{ active:emp.isSet(3) }">
+            <a ng-click="emp.setTab(3)">tab3</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div ng-show="emp.isSet(1)">
+          <h1>Home page</h1>
+          <p>Welcome to the website!</p>
+          <p><a class="btn btn-primary btn-lg"       role="button">Learn more</a></p>
+        </div>
+        <div ng-show="emp.isSet(2)">
+          <h1>Profile page</h1>
+          <p>Profile information</p>
+        </div>
+        <div ng-show="emp.isSet(3)">
+          <h1>Messages</h1>
+          <p> Some messages </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
